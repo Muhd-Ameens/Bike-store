@@ -1,0 +1,74 @@
+<div class="shopping__cart__table">
+    <table>
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="product__cart__item">
+                    <div class="product__cart__item__pic">
+                        <img src="img/shopping-cart/cart-1.jpg" alt="">
+                    </div>
+                    <div class="product__cart__item__text">
+                        <h6>T-shirt Contrast Pocket</h6>
+                        <h5>$98.49</h5>
+                    </div>
+                </td>
+                <td class="quantity__item">
+                    <div class="quantity">
+                        <div class="pro-qty-2">
+                            <input type="text" value="1">
+                        </div>
+                    </div>
+                </td>
+                <td class="cart__price">$ 30.00</td>
+                <td class="cart__close"><i class="fa fa-close"></i></td>
+            </tr>    
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<div class="shopping__cart__table">
+    <table>
+        <thead>
+            <tr>
+                <th>Product</th>
+
+                <th>Name</th>
+                
+                <th>Price</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody class="container-fluid ">
+            {%for p in data%}
+            <tr class="margin ms-auto">
+                <td class="product__cart__item">
+                    <div class="product__cart__item__pic">
+                        <img src="{{p.Bikes_object.image.url}}" alt="">
+                    </div>
+                    <div class="product__cart__item__text">
+                        <td class="cart__price">{{p.Bikes_object.name}}</td>
+
+                    </div>
+                    
+                </td>
+                
+                <td class="cart__price p-5">₹{{p.Bikes_object.price}}</td>
+                <a href="{% url 'cartlist'%}"><img src="{%static 'img/icon/cart.png' %}" alt=""></a>
+            </tr> 
+            {%endfor%}
+            
+            
+        </tbody>
+    </table>
+</div>
