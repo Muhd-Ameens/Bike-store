@@ -1,0 +1,58 @@
+{%extends 'base.html'%}
+
+
+{%load static%}
+
+
+{%block main_block%}
+
+
+
+<!-- Latest Blog Section Begin -->
+<section class="latest spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <span>Brands</span>
+                    <h2>More About Brand</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="blog__item">
+                    <div class="blog__item__pic set-bg" data-setbg="{%static 'img/newbikes/harley-banner.jpeg' %}"></div>
+                    <div class="blog__item__text">
+                        <span><img src="{%static 'img/icon/calendar.png' %}" alt=""> 16 February 2020</span>
+                        <h5>What Curling Irons Are The Best Ones</h5>
+                        <a href="{%url 'harley'%}">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="blog__item">
+                    <div class="blog__item__pic set-bg" data-setbg="{%static 'img/newbikes/yamaha2.jpeg'%}"></div>
+                    <div class="blog__item__text">
+                        <span><img src="{%static 'img/icon/calendar.png' %}" alt=""> 21 February 2020</span>
+                        <h5>Eternity Bands Do Last Forever</h5>
+                        <a href="{%url 'yamaha' %}">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="blog__item">
+                    <div class="blog__item__pic set-bg" data-setbg="{%static 'img/newbikes/bullet.webp' %}"></div>
+                    <div class="blog__item__text">
+                        <span><img src="{%static 'img/icon/calendar.png' %}" alt=""> 28 February 2020</span>
+                        <h5>The Health Benefits Of Sunglasses</h5>
+                        <a href="{%url 'enfield'%}">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Latest Blog Section End -->
+
+{%endblock%}

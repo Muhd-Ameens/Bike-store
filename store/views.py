@@ -60,7 +60,8 @@ class AddToCarttView(View):
         bike_object=Bikes.objects.get(id=id)
         FavouriteItem.objects.create(
             Bikes_object=bike_object,
-            Favourite_object=request.user.cart   
+
+            Favourite_object=request.user.cart
         )
         return redirect("index")
     
@@ -98,21 +99,29 @@ class FavouriteItemRemoveView(View):
 class CheckoutView(View):
     
     def get(self,request,*args,**kwargs):
-
         return render(request,"checkout.html")
 
 
     def post(self,request,*args,**kwargs):
 
         email=request.POST.get("email")
-        phone=request.POST.get("phone")
+        # phone=request.POST.get("phone")
+        
+        
+        
 
-
+        # creating order instance
         order_obj=Order.objects.create(
             user_object=request.user,
-            phone=phone,
-            email=email,
+            
+            # phone=phone,
+            email=email
+            
+            
+            
         )
+
+        # creating order item instsnce
         try:
             favorite_items=request.user.cart.cart_items
 
@@ -130,3 +139,32 @@ class CheckoutView(View):
 
         finally:
             return redirect("index")
+        
+
+
+
+
+
+        
+        
+
+class YamahaView(View):
+    def get(self,request,*args,**kwargs):
+        return render(request,"yamaha.html")
+
+class HarleyView(View):
+    def get(self,request,*args,**kwargs):
+        return render(request,"harley.html")
+    
+class EnfieldView(View):
+    def get(self,request,*args,**kwargs):
+        return render(request,"Enfield.html")
+    
+class BrandView(View):
+    def get(self,request,*args,**kwargs):
+        return render(request,"brand.html")
+    
+
+class ContactView(View):
+    def get(self,request,*args,**kwargs):
+        return render(request,"contact.html")

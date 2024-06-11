@@ -71,16 +71,17 @@ post_save.connect(create_basket,sender=User)
 class Order(models.Model):
 
     user_object=models.ForeignKey(User,on_delete=models.CASCADE,related_name="purchase")
+    
     phone=models.CharField(max_length=12)
     email=models.CharField(max_length=200,null=True)
     is_paid=models.BooleanField(default=False)
     order_id=models.CharField(max_length=200,null=True)
     option=(
-        ("booked","booked"),
-        ("delivered","delivered"),
-        ("cancelled","cancelled")
+        ("cod","cod"),
+        ("online","online"),
+        
     )
-    status=models.CharField(max_length=200,choices=option,default="booked")
+    status=models.CharField(max_length=200,choices=option,default="cod")
 
     @property
     def get_order_items(self):

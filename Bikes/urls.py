@@ -31,6 +31,11 @@ urlpatterns = [
     path("cart/all",views.CartListView.as_view(),name="cartlist"),
     path("basket/remove/<int:pk>/",views.FavouriteItemRemoveView.as_view(),name="item-remove"),
     path('checkout/',views.CheckoutView.as_view(),name="check-out"),
+    path('yamaha/',views.YamahaView.as_view(),name="yamaha"),
+    path('harley',views.HarleyView.as_view(),name="harley"),
+    path("enfield",views.EnfieldView.as_view(),name="enfield"),
+    path("brands",views.BrandView.as_view(),name="brands"),
+    path('contact',views.ContactView.as_view(),name="contact"),
     
     
 
