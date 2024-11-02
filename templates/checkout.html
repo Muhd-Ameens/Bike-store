@@ -1,0 +1,106 @@
+
+{%extends 'base.html'%}
+
+
+{%load static%}
+
+
+{%block main_block%}
+
+
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-option">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb__text">
+                    <h4>Check Out</h4>
+                    <div class="breadcrumb__links">
+                        <a href="./index.html">Home</a>
+                        <a href="./shop.html">Shop</a>
+                        <span>Check Out</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Section End -->
+
+<!-- Checkout Section Begin -->
+<section class="checkout spad">
+    <div class="container">
+        <div class="checkout__form">
+            <form action="#" method="post">
+                {%csrf_token%}
+                <div class="row">
+                    <div class="col-lg-8 col-md-6 p-2">
+                        
+                        <h6 class="checkout__title">Billing Details</h6>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="checkout__input">
+                                    <p>Name<span>*</span></p>
+                                    <input class="text text-dark" type="text">
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="checkout__input">
+                            <p>Address<span>*</span></p>
+                            <input class="text text-dark"  type="text" placeholder="Full Address" class="checkout__input__add">
+                            
+                        </div>
+                        
+                        
+                        
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="checkout__input">
+                                    <p>Phone<span>*</span></p>
+                                    <input class="text text-dark"  type="text">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="checkout__input">
+                                    <p>Email<span>*</span></p>
+                                    <input class="text text-dark"  type="text">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        
+                      
+                        <div class="row col-lg-6 mb-5">
+                            <select name="payment" id="" class="flex h-10 w-full ">
+                                <option value="cod">cod</option>
+                                <option value="online">online</option>
+                            </select>
+                        </div>
+                        
+
+                        <div class="row col-lg-6 mt-4">
+                            <a href="{%url 'index' %}"><button type="submit" class=" site-btn ">PLACE ORDER</button></a>
+                        </div>
+                        
+                    </div>
+                    
+                    
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Checkout Section End -->
+
+{%endblock%}
+
+
+
+
+
+
+

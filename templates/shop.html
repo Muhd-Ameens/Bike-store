@@ -1,0 +1,59 @@
+
+{%extends 'base.html'%}
+
+
+{%load static%}
+
+
+{%block main_block%}
+
+
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-option">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb__text">
+                    <h4>Shop</h4>
+                    <div class="breadcrumb__links">
+                        <a href="{%url 'index' %}">Home</a>
+                        <span>Shop</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Section End -->
+
+<!-- Shop Section Begin -->
+<div class="row product__filter">
+    {%for p in data%}
+    <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals  ">
+        
+        <div class="product__item">
+            <div class="product__item__pic set-bg" data-setbg="{{p.image.url}}">
+                <span class="label">New</span>
+                <ul class="product__hover">
+                    <li><a href="#"><img src="{%static 'img/icon/heart.png' %}" alt=""></a></li>
+                    <li><a href="#"><img src="{%static 'img/icon/compare.png' %}" alt=""> <span>Compare</span></a></li>
+                    <li><a href="#"><img src="{%static 'img/icon/search.png' %}" alt=""></a></li>
+                </ul>
+            </div>
+            <div class="product__item__text">
+                
+                <h6>{{p.name}}</h6>
+                <a href="{%url 'detail' p.id %}" class="add-cart">Details</a>
+                
+                <h5>₹{{p.price}}</h5>
+                
+                
+            </div>
+        </div>
+    </div>
+    
+    {%endfor%}
+</div>
+<!-- Shop Section End -->
+
+{%endblock%}

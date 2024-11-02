@@ -1,0 +1,79 @@
+
+{%extends 'base.html'%}
+
+
+{%load static%}
+
+
+{%block main_block%}
+
+
+<!-- Shopping Cart Section Begin -->
+<section class="shopping-cart spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="shopping__cart__table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+
+                                <th>Name</th>
+                                
+                                <th>Price</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody class="container-fluid ">
+                            {%for p in data%}
+                            <tr class="margin ms-auto">
+                                <td class="product__cart__item">
+                                    <div class="product__cart__item__pic">
+                                        <img src="{{p.Bikes_object.image.url}}" alt="">
+                                    </div>
+                                    <div class="product__cart__item__text">
+                                        <td class="cart__price">{{p.Bikes_object.name}}</td>
+
+                                    </div>
+                                    
+                                </td>
+                                
+                                <td class="cart__price p-5">₹{{p.Bikes_object.price}}</td>
+                                <td> <a href="{%url 'item-remove' p.id%}"><button type="submit" class="primary-btn"> remove</button></a>
+                                </td>
+                            </tr> 
+                            {%endfor%}
+                            
+                            
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="continue__btn">
+                            <a href="{%url 'shop-list'%}">Continue Shopping</a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-lg-4">
+                
+                <div class="cart__total">
+                    <h6>Your Item</h6>
+                    <ul>
+                        <li>Bike <span> </span></li>
+                        <li><span></span></li>
+                    </ul>
+                    <a href="{%url 'check-out' %}" class="primary-btn">Proceed to checkout</a>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Shopping Cart Section End -->
+
+{%endblock%}
